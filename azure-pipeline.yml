@@ -22,7 +22,7 @@ stages:
     pool:
       vmImage: 'ubuntu-latest'
     steps:
-      - script: ./build.sh
+      - script: echo 'Build'
         displayName: 'Build'
 
 # Add other stages like UnitTests, IntegrationTests, etc.
@@ -39,7 +39,7 @@ stages:
       runOnce:
         deploy:
           steps:
-            - script: ./deploy_staging.sh
+            - script: echo 'Deploy to Staging'
               displayName: 'Deploy to Staging'
 
 - stage: DeployToProduction
@@ -56,5 +56,5 @@ stages:
       runOnce:
         deploy:
           steps:
-            - script: ./deploy_production.sh
+            - script: echo 'Deploy to Production'
               displayName: 'Deploy to Production'
